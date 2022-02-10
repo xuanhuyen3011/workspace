@@ -1,0 +1,25 @@
+name: venv
+channels:
+  - pyg
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9.*
+  - jupyterlab>=3.1.* # enable debugger for notebook
+  - ipykernel>=6  # enable debugger for notebook
+  - jupyter-server-proxy
+  - code-server >=3.2
+  - conda-lock
+  - setuptools
+  - seaborn
+  - pandas
+  - pip:
+    - jupyter-resource-usage
+    - jupyterlab_latex
+    - jupyter-tensorboard
+    - jupyterlab-git
+    - jupyter-archive
+    - jupyterlab-tour
+    - ipympl
+    - jupyter-vscode-proxy

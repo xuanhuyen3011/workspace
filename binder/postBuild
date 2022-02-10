@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# run matplotlib once to generate the font cache
+python -c "import matplotlib as mpl; mpl.use('Agg'); import pylab as plt; fig, ax = plt.subplots(); fig.savefig('test.png')"
+
+test -e test.png && rm test.png
+
+python -m pip install --user postgres_kernel
+
+python -m pip install \
+  dbt-core \
+  dbt-postgres \
+  dbt-redshift \
+  dbt-snowflake \
+  dbt-bigquery
+  
+code-server --install-extension ms-python.python
+code-server --install-extension ms-toolsai.jupyter
